@@ -26,6 +26,7 @@ $ python manage.py startapp [App이름] // App을 시작한다.
 
 ```
 
+**Hello version**
 ```
 apps.py -> class 명 확인 (HelloConfig) -> setting.py에서 Installed_APPS에 app 경로를 추가하기
 
@@ -35,7 +36,11 @@ def home (request):
 //home이라는 함수를 정의하고 이는 request와 index.html을 render한 값을 반환한다.
 
 urls.py :
-import Hello.views // Hello라는 
+import Hello.views // Hello라는 디렉토리에 views.py파일을 유입한다.
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', Hello.views.home, name = 'home'), 
+]
 ```
 
 
